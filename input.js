@@ -50,5 +50,5 @@ document.getElementById('generate-output').addEventListener('click', function() 
 
     sessionStorage.setItem('inputData', JSON.stringify(inputData, null, 2));
     console.log("worked");
-    window.location.href = "index.html";
+    window.location.href = "result.html";
 });

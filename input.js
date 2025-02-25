@@ -50,5 +50,5 @@ document.getElementById('generate-output').addEventListener('click', function() 
 
     sessionStorage.setItem('inputData', JSON.stringify(inputData, null, 2));
     console.log("worked");
-    window.location.href = "result.html";
+    window.location.href = "https://pokemonvortex.github.io/hellvivor-votes/result.html";
 });

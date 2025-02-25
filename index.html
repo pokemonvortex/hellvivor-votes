@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribal Council</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">Tribal Council</div>
+        <div class="info">
+            <div id="tribe-name" class="sub-info">
+                <h2>Tribe</h2>
+            </div>
+            <div id="immunity-holder" class="sub-info">
+                <h2>Immunity</h2>
+            </div>
+        </div>
+        <div class="voted-out-section">
+            <div class="voted-out">
+                <img alt="Voted Out" id="voted-out-img">
+                <div class="voted-out-info">
+                    <h3 id="voted-out-name"></h3>
+                    <p>Placement: <span id="placement"></span></p>
+                    <p>Vote Count: <span id="vote-count"></span></p>
+                </div>
+            </div>
+            <div>
+                <!-- <h3>Votes for <span id="voted-out-name-list">Timbo Curls</span>:</h3> -->
+                <div class="votes-section" id="votes-for-out">
+                    <!-- Voters' images will be appended here -->
+                </div>
+            </div>
+        </div>
+        <div id="other-votes-container">
+            <h3>Other Votes:</h3>
+            <div class="other-votes-section" id="other-votes">
+                <!-- Other votes will be appended here -->
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

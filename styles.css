@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2, h3, p {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.header {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: orangered;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 20px orange;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info h2 {
+    margin: 0;
+}
+
+.sub-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sub-info p {
+    margin-top: 0;
+}
+
+.sub-info img {
+    width: 60px;
+    height: 60px;
+}
+
+#immunity-holder img {
+    border-radius: 50%;
+}
+
+#immunity-holder h2 {
+    color: cornflowerblue;
+}
+
+#tribe-name h2 {
+    color: greenyellow;
+}
+
+.voted-out-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.voted-out {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.voted-out img {
+    width: 270px;
+    height: 270px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.voted-out-info h3 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: red;
+}
+
+.voted-out-info p {
+    font-size: 1.2rem;
+}
+
+.votes-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.votes-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.vote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+
+.vote img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.vote p {
+    margin: 5px 0 0;
+    text-align: center;
+}
+
+#other-votes-container h3 {
+    color: gainsboro;
+}
+
+.other-votes-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.other-vote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.other-vote img.main {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.other-vote .voters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.other-vote > p {
+    margin-top: 2px;
+}
+
+.other-vote .voters p {
+    margin-top: 0px;
+    font-size: 12px;
+}
+
+.other-vote .voters img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+@media (max-width: 600px) {
+    .voted-out {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .voted-out img {
+        margin-bottom: 10px;
+    }
+}

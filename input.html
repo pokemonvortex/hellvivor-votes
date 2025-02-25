@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribal Council Input</title>
+    <link rel="stylesheet" href="input.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tribal Council Input</h1>
+        <div class="form-group">
+            <label for="tribe-name">Tribe Name</label>
+            <input type="text" id="tribe-name">
+        </div>
+
+        <div class="form-group">
+            <label for="immunity-holder">Immunity Holder</label>
+            <input type="text" id="immunity-holder">
+        </div>
+
+        <div class="form-group">
+            <label for="voted-out-name">Voted Out Name</label>
+            <input type="text" id="voted-out-name">
+        </div>
+
+        <div class="form-group">
+            <label for="placement">Placement</label>
+            <input type="text" id="placement">
+        </div>
+
+        <div class="form-group">
+            <label for="voted-out-voters">Voters for Voted Out (one per line)</label>
+            <textarea id="voted-out-voters"></textarea>
+        </div>
+
+        <h2>Other Votes</h2>
+        <div id="other-votes-container"></div>
+        <button id="add-other-vote">Add Other Vote</button>
+
+        <div class="form-group" style="text-align: center; margin-top: 20px;">
+            <button id="generate-output">Generate Output</button>
+        </div>
+    </div>
+
+    <script src="input.js"></script>
+</body>
+</html>

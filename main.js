@@ -71,7 +71,7 @@ function populateData(data) {
             const otherVoteDiv = document.createElement("div");
             otherVoteDiv.className = "other-vote";
             otherVoteDiv.innerHTML = `<img src="cast/${vote.name.toLowerCase()}.png" alt="${vote.name}" class="main"><p>${vote.name}</p><div class="voters"></div>`;
-            otherVoteDiv.querySelector(".main").addEventListener("click", () => toggleNullified(otherVoteDiv));
+            otherVoteDiv.querySelector(".main").addEventListener("click", () => toggleBoth(otherVoteDiv));
 
             const votersDiv = otherVoteDiv.querySelector(".voters");
             vote.voters.forEach(voter => {
@@ -109,7 +109,7 @@ function toggleSelfVote(voteDiv) {
         label.style.position = "absolute";
         label.style.color = "red";
         label.style.fontWeight = "bold";
-        label.style.fontSize = "20px";
+        label.style.fontSize = "25px";
         label.style.textShadow = "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000";
         label.style.transform = "rotate(-20deg)";
         voteDiv.appendChild(label);
@@ -133,6 +133,20 @@ function toggleNullified(otherVoteDiv) {
         label.style.textShadow = "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000";
         label.style.transform = "rotate(-20deg)";
         otherVoteDiv.appendChild(label);
+    }
+}
+
+function toggleBoth(voteDiv) {
+    if (voteDiv.classList.contains("self-vote")) {
+        voteDiv.classList.remove("self-vote");
+        voteDiv.querySelector(".self-vote-label")?.remove();
+        toggleNullified(voteDiv);
+    }
+    else if (voteDiv.querySelector(".main").classList.contains("nullified")) {
+        toggleNullified(voteDiv);
+    }
+    else {
+        toggleSelfVote(voteDiv);
     }
 }
 

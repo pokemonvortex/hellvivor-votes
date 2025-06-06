@@ -163,7 +163,7 @@ function toggleBoth(voteDiv) {
         toggleNullified(voteDiv);
     }
     else if (voteDiv.querySelector(".main").classList.contains("nullified")) {
-        voteDiv.classList.remove("nullified");
+        voteDiv.querySelector(".main").classList.remove("nullified");
         voteDiv.querySelector(".nullified-label")?.remove();
         toggleWalked(voteDiv);
     }

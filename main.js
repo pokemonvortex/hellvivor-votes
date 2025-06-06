@@ -136,6 +136,26 @@ function toggleNullified(otherVoteDiv) {
     }
 }
 
+function toggleWalked(otherVoteDiv) {
+    const img = otherVoteDiv.querySelector(".main");
+    if (img.classList.contains("walked")) {
+        img.classList.remove("walked");
+        otherVoteDiv.querySelector(".walked-label")?.remove();
+    } else {
+        img.classList.add("walked");
+        const label = document.createElement("div");
+        label.className = "walked-label";
+        label.innerText = "Walked";
+        label.style.position = "absolute";
+        label.style.color = "red";
+        label.style.fontWeight = "bold";
+        label.style.fontSize = "25px";
+        label.style.textShadow = "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000";
+        label.style.transform = "rotate(-20deg)";
+        otherVoteDiv.appendChild(label);
+    }
+}
+
 function toggleBoth(voteDiv) {
     if (voteDiv.classList.contains("self-vote")) {
         voteDiv.classList.remove("self-vote");
@@ -143,7 +163,12 @@ function toggleBoth(voteDiv) {
         toggleNullified(voteDiv);
     }
     else if (voteDiv.querySelector(".main").classList.contains("nullified")) {
-        toggleNullified(voteDiv);
+        voteDiv.classList.remove("nullified");
+        voteDiv.querySelector(".nullified-label")?.remove();
+        toggleWalked(voteDiv);
+    }
+    else if (voteDiv.querySelector(".main").classList.contains("walked")) {
+        toggleWalked(voteDiv);
     }
     else {
         toggleSelfVote(voteDiv);

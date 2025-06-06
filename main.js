@@ -4,7 +4,7 @@ const input = JSON.parse(sessionStorage.getItem('inputData'));
 function populateData(data) {
     // document.getElementById("tribe-name").innerText = data.tribe;
     // document.getElementById("immunity-holder").innerText = data.immunity;
-    document.getElementById("voted-out-img").src = `cast/${data.votedOut.name.toLowerCase()}.png`;
+    document.getElementById("voted-out-img").src = `cast/${data.votedOut.name.replace(/\W/gi,"").toLowerCase()}.png`;
     document.getElementById("voted-out-name").innerText = data.votedOut.name;
     document.getElementById("placement").innerText = data.votedOut.placement;
     // document.getElementById("voted-out-name-list").innerText = data.votedOut.name;
@@ -12,7 +12,7 @@ function populateData(data) {
     const tribe = data.tribe
     const tribeDiv = document.getElementById("tribe-name");
     const tribeImg = document.createElement("img");
-    tribeImg.src = `cast/${tribe.toLowerCase()}.png`;
+    tribeImg.src = `cast/${tribe.replace(/\W/gi,"").toLowerCase()}.png`;
     tribeImg.alt = tribe;
     const tribeName = document.createElement("p");
     tribeName.innerText = tribe;
@@ -22,7 +22,7 @@ function populateData(data) {
     const immunity = data.immunity
     const immunityDiv = document.getElementById("immunity-holder");
     const immunityImg = document.createElement("img");
-    immunityImg.src = `cast/${immunity.toLowerCase()}.png`;
+    immunityImg.src = `cast/${immunity.replace(/\W/gi,"").toLowerCase()}.png`;
     immunityImg.alt = immunity;
     const immunityName = document.createElement("p");
     immunityName.innerText = immunity;
@@ -53,7 +53,7 @@ function populateData(data) {
     voters.forEach((voter, index) => {
         const voteDiv = document.createElement("div");
         voteDiv.className = "vote";
-        voteDiv.innerHTML = `<img src="cast/${voter.toLowerCase()}.png" alt="${voter}"><p>${voter}</p>`;
+        voteDiv.innerHTML = `<img src="cast/${voter.replace(/\W/gi,"").toLowerCase()}.png" alt="${voter}"><p>${voter}</p>`;
         voteDiv.addEventListener("click", () => toggleSelfVote(voteDiv));
         if (index < topRowCount) {
             topRow.appendChild(voteDiv);
@@ -70,13 +70,13 @@ function populateData(data) {
         data.otherVotes.forEach(vote => {
             const otherVoteDiv = document.createElement("div");
             otherVoteDiv.className = "other-vote";
-            otherVoteDiv.innerHTML = `<img src="cast/${vote.name.toLowerCase()}.png" alt="${vote.name}" class="main"><p>${vote.name}</p><div class="voters"></div>`;
+            otherVoteDiv.innerHTML = `<img src="cast/${vote.name.replace(/\W/gi,"").toLowerCase()}.png" alt="${vote.name}" class="main"><p>${vote.name}</p><div class="voters"></div>`;
             otherVoteDiv.querySelector(".main").addEventListener("click", () => toggleBoth(otherVoteDiv));
 
             const votersDiv = otherVoteDiv.querySelector(".voters");
             vote.voters.forEach(voter => {
                 const voterImg = document.createElement("img");
-                voterImg.src = `cast/${voter.toLowerCase()}.png`;
+                voterImg.src = `cast/${voter.replace(/\W/gi,"").toLowerCase()}.png`;
                 voterImg.alt = voter;
                 const voterName = document.createElement("p");
                 voterName.innerText = voter;
